@@ -6,11 +6,11 @@ import { cartClear, selectCart } from '../components/redux/slices/cartSlice'
 import CartItem from '../components/CartItem'
 
 const Cart = () => {
-    const {totalPrice, items} = useSelector(selectCart)
+    const { totalPrice, items } = useSelector(selectCart)
     const dispatch = useDispatch()
     const count = items.reduce((sum, obj) => {
         return obj.count + sum
-      }, 0)
+    }, 0)
 
     const onClickClear = () => {
         dispatch(cartClear())
@@ -49,9 +49,13 @@ const Cart = () => {
                         <span>Очистить корзину</span>
                     </div>
                 </div>
-                <div className="content__items">
-                    {items.map(obj => <CartItem key={obj.id} {...obj}/>)}
-                </div>
+                {items ?
+                    <div className="content__items">
+                        {items.map(obj => <CartItem key={obj.id} {...obj} />)}
+                    </div>
+                    :
+                    <CartEmpty/>
+                }
                 <div className="cart__bottom">
                     <div className="cart__bottom-details">
                         <span> Всего пицц: <b>{count} шт.</b> </span>
