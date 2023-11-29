@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import Search from './Search'
+import { Search } from '../components'
 import { selectCart } from './redux/Cart/selectors'
 
-function Header() {
+export const Header = () => {
   const { items, totalPrice } = useSelector(selectCart)
   const isMounted = React.useRef(false)
 
@@ -74,5 +74,3 @@ function Header() {
     </div>
   )
 }
-
-export default Header

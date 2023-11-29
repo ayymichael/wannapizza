@@ -40,4 +40,4 @@ const FullPizza: React.FC = () => {
     )
 }
 
-export default FullPizza;
+export default FullPizza

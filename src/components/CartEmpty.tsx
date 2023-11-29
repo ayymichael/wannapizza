@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CartEmpty:React.FC = () => {
+export const CartEmpty:React.FC = () => {
     return (
         <div className="cart cart--empty">
             <h2>Корзина пустая <span>😕</span></h2>
@@ -15,5 +15,3 @@ const CartEmpty:React.FC = () => {
         </div>
     )
 }
-
-export default CartEmpty

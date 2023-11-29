@@ -1,8 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import {
-  setSortChoise
-} from './redux/Filter/slice'
+import { setSortChoise } from './redux/Filter/slice'
 import { SortType, sortPropertyEnum } from './redux/Filter/types'
 
 export const choises: SortType[] = [
@@ -15,7 +13,7 @@ type SortProps = {
   value: SortType
 }
 
-const Sort: React.FC<SortProps> = React.memo(({ value }) => {
+export const Sort: React.FC<SortProps> = React.memo(({ value }) => {
   const dispatch = useDispatch()
   const sortRef = React.useRef<HTMLDivElement>(null)
 
@@ -74,14 +72,9 @@ const Sort: React.FC<SortProps> = React.memo(({ value }) => {
                 {obj.name}
               </li>
             ))}
-            {/* <li className="active">популярности</li>
-                        <li>цене</li>
-                        <li>алфавиту</li> */}
           </ul>
         </div>
       )}
     </div>
   )
 })
-
-export default Sort
